@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bianrySearch(arr,item){
+            var left = 0;
+            var right = arr.length - 1;
+            while( left <= right){
+                var mid = Math.floor((left + right)/2);
+                if(arr[mid] == item){
+                    return mid;
+                }
+                if(arr[mid] < item){
+                    left = mid + 1;
+                }else{
+                    right = mid - 1;
+                }
+                
+            }
+            return false;
+        }
+        var arr = [1,2,3,4,5,7,9,76,89]
+        console.log(bianrySearch(arr,5));
+        console.log(bianrySearch(arr,66));
+    </script>
+</body>
+</html>
